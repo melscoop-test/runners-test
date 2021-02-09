@@ -4,7 +4,7 @@ on:
 jobs:
   print-versions:
     name: Print current package versions
-    runs-on: [ubuntu-latest, self-hosted]
+    runs-on: [ubuntu-latest]
     steps:
       - name: show package versions
         run: dpkg -l | grep ii
