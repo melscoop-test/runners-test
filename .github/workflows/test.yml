@@ -1,13 +1,10 @@
 name: Testing runner hierarchy
 on:
-  pull_request:
-    types: [opened, ready_for_review]
-    branches:
-      - "dependabot/**"
-
+  workflow_dispatch:
 jobs:
   print-versions:
     name: Print current package versions
     runs-on: [self-hosted, ubuntu-latest]
     steps:
-      - run: dpkg -l | grep ii
+      - name: show package versions
+        run: dpkg -l | grep ii
